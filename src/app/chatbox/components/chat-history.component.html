@@ -1,0 +1,17 @@
+<div class="container" style="min-height: 400px">
+
+  <ng-container *ngFor="let message of messages">
+    <div class="chat" [class.chat-left]="!message.sender">
+      <div class="chat-avatar">
+        <a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+          <img src="http://emilcarlsson.se/assets/charlesforstman.png" alt="" class="rounded-circle" width="50"/>
+        </a>
+      </div>
+      <div class="chat-body">
+        <div class="chat-content">
+          <p>{{message.text}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

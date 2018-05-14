@@ -1,5 +1,6 @@
 export class Message {
-    constructor() {
-    }
-}
 
+  text: String;
+  sender: boolean = false;
+
+}

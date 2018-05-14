@@ -4,17 +4,19 @@
       <a href="#" class="site-logo"></a>
     </div>
     <div class="w-100"></div>
-    <div class="col border">
-      sdfds
+    <div class="col pre-scrollable border-bottom">
+      <app-chat-history [messages]="messages"></app-chat-history>
     </div>
     <div class="w-100"></div>
-    <div class="col p-0">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="col p-1">
+      <div class="input-group">
+        <input type="text" class="form-control border-0" placeholder="Write your message..."
+               aria-label="Write your message..."
+               aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
-            Send
-          </button>
+          <!--<button class="btn btn-outline-secondary rounded" type="button">-->
+            <!--Send-->
+          <!--</button>-->
         </div>
       </div>
     </div>
