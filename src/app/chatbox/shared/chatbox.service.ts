@@ -1,17 +1,20 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Message} from './message';
+import {HttpClient} from "@angular/common/http";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ChatboxService {
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
   getChatHistory(): Observable<Message> {
     return null;
   }
+
+  // sendChatMessage(): Observable<any>{
+  //   // this.httpClient.post<>("ht")
+  // }
 }
 
