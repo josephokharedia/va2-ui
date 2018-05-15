@@ -1,22 +1,23 @@
-export enum UIType {
-  TEXT,
-  MULTIPLE_CHOICE
+enum UIType {
+  TEXT = "TEXT",
+  MULTIPLE_CHOICE = "MULTIPLE_CHOICE"
 }
 
-export interface UI {
+interface GenericUI {
   type: UIType
+  isUser?: boolean;
+  isLoading?: boolean;
   fetch?: string;
   content?: string[];
   mapping?: any;
 }
 
-export interface TextUI extends UI{
+interface TextUI extends GenericUI {
 }
 
-export interface MultipleChoiceUI extends UI {
+interface MultipleChoiceUI extends GenericUI {
   mapping: MultipleChoiceUIMapping;
 }
-
 
 
 // ==============  Mappings ================ //
@@ -24,3 +25,5 @@ interface MultipleChoiceUIMapping {
   heading?: string,
   label: string;
 }
+
+export {UIType, GenericUI, TextUI, MultipleChoiceUI}

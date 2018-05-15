@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UI} from "../shared/ui";
+import * as UI from "../shared/ui";
 
 @Component({
   selector: 'app-ui',
@@ -8,15 +8,16 @@ import {UI} from "../shared/ui";
 })
 export class UIComponent implements OnInit {
 
-  @Input('ui')
-  uiRawData: string;
-  ui: UI;
+  @Input('raw')
+  raw: string;
+  ui: UI.GenericUI;
+  UI = UI;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.ui = <UI>JSON.parse(this.uiRawData);
+    console.log('init:', this.raw);
+    this.ui = <UI.GenericUI>JSON.parse(this.raw);
   }
-
 }

@@ -9,7 +9,7 @@ import {Message} from "../shared/message";
 export class ChatHistoryComponent implements OnInit {
 
   @Input()
-  messages: Message[];
+  messages: string[];
 
   constructor() {
   }

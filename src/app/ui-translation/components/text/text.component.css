@@ -1,0 +1,83 @@
+.form-control::-webkit-input-placeholder {
+  color: #EDEEF0;
+}
+
+/* WebKit, Blink, Edge */
+.form-control:-moz-placeholder {
+  color: #EDEEF0;
+}
+
+/* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder {
+  color: #EDEEF0;
+}
+
+/* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder {
+  color: #EDEEF0;
+}
+/* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder {
+  color: #EDEEF0;
+}
+/* Microsoft Edge */
+
+.chat-avatar .avatar {
+  width: 50px;
+  margin-top: -10px;
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  white-space: nowrap;
+  border-radius: 1000px;
+  vertical-align: bottom;
+}
+a {
+  color: #009C9F;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.chat-avatar {
+  float: left;
+}
+
+.chat-left .chat-avatar {
+  float: right;
+}
+
+.chat-body {
+  display: block;
+  margin: 10px 0 0 30px;
+  overflow: hidden;
+}
+
+.chat-left .chat-body {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+.chat-body .chat-content {
+  text-align: left;
+  position: relative;
+  display: block;
+  float: left;
+  padding: 8px 15px;
+  margin: 0 0 10px 20px;
+  clear: both;
+  color: #FFFFFF;
+  background-color: #00B5B8;
+  border-radius: 4px;
+}
+
+.chat-left .chat-content {
+  text-align: right;
+  float: right;
+  margin: 0 20px 10px 0;
+  color: #404E67;
+  background-color: #EDEEF0;
+}

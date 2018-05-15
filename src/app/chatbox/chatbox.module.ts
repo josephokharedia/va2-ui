@@ -6,6 +6,7 @@ import {ChatboxComponent} from "./pages/chatbox.component";
 import {ChatHistoryComponent} from "./components/chat-history.component";
 import {FormsModule} from '@angular/forms';
 import {UiTranslationModule} from "../ui-translation/ui-translation.module";
+import {TranslationService} from "../ui-translation/services/translation.service";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {UiTranslationModule} from "../ui-translation/ui-translation.module";
     FormsModule,
     UiTranslationModule
   ],
+  providers: [TranslationService],
   declarations: [ChatboxComponent, ChatHistoryComponent]
 })
 export class ChatboxModule {

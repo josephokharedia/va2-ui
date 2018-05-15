@@ -1,19 +1,20 @@
 <div class="container" style="min-height: 400px">
 
   <ng-container *ngFor="let message of messages">
-    <div class="chat" [class.chat-left]="!message.sender">
-      <div class="chat-avatar">
-        <a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
-          <img *ngIf="message.sender" src="http://emilcarlsson.se/assets/charlesforstman.png" alt="" class="rounded-circle" width="50"/>
-          <img *ngIf="!message.sender" src="/assets/logo.png" alt="" class="rounded-circle" width="50"/>
-        </a>
-      </div>
-      <div class="chat-body">
-        <div class="chat-content">
-          <p *ngIf="!message.loader" class="m-0">{{message.text}}</p>
-          <p *ngIf="message.loader" class="m-0"><i class="fas fa-circle-notch fa-spin"></i></p>
-        </div>
-      </div>
-    </div>
+    <app-ui [raw]="message"></app-ui>
+    <!--<div class="chat" [class.chat-left]="!message.sender">-->
+      <!--<div class="chat-avatar">-->
+        <!--<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">-->
+          <!--<img *ngIf="message.sender" src="http://emilcarlsson.se/assets/charlesforstman.png" alt="" class="rounded-circle" width="50"/>-->
+          <!--<img *ngIf="!message.sender" src="/assets/logo.png" alt="" class="rounded-circle" width="50"/>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="chat-body">-->
+        <!--<div class="chat-content">-->
+          <!--<p *ngIf="!message.loader" class="m-0">{{message.text}}</p>-->
+          <!--<p *ngIf="message.loader" class="m-0"><i class="fas fa-circle-notch fa-spin"></i></p>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
   </ng-container>
 </div>

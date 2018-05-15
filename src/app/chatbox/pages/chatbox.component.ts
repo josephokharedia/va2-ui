@@ -1,5 +1,5 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
-import {Message} from "../shared/message";
+import {TranslationService} from "../../ui-translation/services/translation.service";
 
 @Component({
   selector: 'app-chatbox',
@@ -8,10 +8,10 @@ import {Message} from "../shared/message";
 })
 export class ChatboxComponent implements OnInit, AfterViewChecked {
 
-  messages: Message[] = [];
-  currentMessage: String = '';
+  messages: string[] = [];
+  currentMessage: string = '';
 
-  constructor() {
+  constructor(private translationService: TranslationService) {
   }
 
   static _scrollToBottom() {
@@ -27,41 +27,33 @@ export class ChatboxComponent implements OnInit, AfterViewChecked {
 
   sendMessage(event: any) {
     if (event.key === 'Enter' && (this.currentMessage && this.currentMessage.trim())) {
-      let msg = event.target.value;
-      let m1 = new Message();
-      m1.text = msg;
-      m1.sender = true;
-      this.messages.push(m1);
-      this.currentMessage = '';
-      ChatboxComponent._scrollToBottom();
+      let encodedUI = this.translationService.endcodeToUIComponet(this.currentMessage);
+      this.messages.push(encodedUI);
     }
   }
 
   ngOnInit() {
-    let m1 = new Message();
-    let m2 = new Message();
-    let m3 = new Message();
-    let m4 = new Message();
-    let m5 = new Message();
-
-    m1.text = 'Hi';
-    m1.sender = true;
-
-    m2.text = 'Hello, How can I help you?';
-
-    m3.text = 'Please help me with an International Travel letter Please help me with an International Travel letter Please help me with an International Travel letter';
-    m3.sender = true;
-
-    m4.text = 'Sure. Where would you like to travel to?';
-
-    m5.sender = false;
-    m5.loader = true;
-
-    this.messages.push(m1);
+    let m1 =
+      `{
+          "type": "TEXT",
+          "isUser": true,
+          "isLoading": false,
+          "content": [
+              "Hello"
+          ]
+      }`;
+    let m2 =
+      `{
+          "type": "TEXT",
+          "isUser": false,
+          "isLoading": false,
+          "content": [
+              "Hi,",
+              "How can I help you?"
+          ]
+      }`;
+    // this.messages.push(m1);
     this.messages.push(m2);
-    this.messages.push(m3);
-    this.messages.push(m4);
-    this.messages.push(m5);
   }
 
 }
