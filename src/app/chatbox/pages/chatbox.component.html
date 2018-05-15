@@ -4,7 +4,7 @@
       <a href="#" class="site-logo"></a>
     </div>
     <div class="w-100"></div>
-    <div class="col pre-scrollable border-bottom">
+    <div id="chatboxHistory" class="col pre-scrollable border-bottom">
       <app-chat-history [messages]="messages"></app-chat-history>
     </div>
     <div class="w-100"></div>
@@ -12,12 +12,9 @@
       <div class="input-group">
         <input type="text" class="form-control border-0" placeholder="Write your message..."
                aria-label="Write your message..."
-               aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <!--<button class="btn btn-outline-secondary rounded" type="button">-->
-            <!--Send-->
-          <!--</button>-->
-        </div>
+               aria-describedby="basic-addon2"
+               [(ngModel)]="currentMessage"
+               (keyup)="sendMessage($event)">
       </div>
     </div>
   </div>
